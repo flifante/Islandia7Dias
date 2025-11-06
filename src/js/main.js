@@ -1,0 +1,1 @@
+console.log("Islandia en 7 días listo!");

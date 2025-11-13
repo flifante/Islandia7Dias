@@ -1,32 +1,117 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <title>Islandia en 7 días — Portada</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./assets/css/main.scss">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Fuentes, créditos y atribuciones de imágenes, vídeos y recursos utilizados en el proyecto Islandia en 7 días." />
+    <title>Recursos y enlaces | Islandia en 7 días</title>
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
+    <link rel="stylesheet" href="./assets/css/main.scss" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   </head>
+
   <body>
     <header>
-      <h1>Islandia en 7 días</h1>
-      <nav>
-        <ul>
-          <li><a href="/">Inicio</a></li>
-          <li><a href="/categoria">Rutas</a></li>
-          <li><a href="/det1">Cascadas</a></li>
-          <li><a href="/det2">Reykjavík</a></li>
-          <li><a href="/links">Enlaces</a></li>
+      <h1>Recursos y enlaces</h1>
+      <nav aria-label="Menú principal">
+        <ul class="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="categoria.html">Rutas y lugares</a></li>
+          <li><a href="links.html" aria-current="page">Recursos y enlaces</a></li>
         </ul>
       </nav>
     </header>
 
-    <main>
-      <h2>Bienvenido a Islandia</h2>
-      <p>Tu guía para descubrir Islandia en una semana.</p>
+    <main id="contenido-principal" class="links">
+      <section class="intro-links">
+        <h2>Introducción</h2>
+        <p>
+          En esta página se detallan las fuentes de las imágenes, vídeos y recursos utilizados en 
+          <strong>Islandia en 7 días</strong>. El proyecto se ha desarrollado con un enfoque educativo y sin ánimo de lucro,
+          utilizando materiales libres y respetando siempre sus licencias de uso.
+        </p>
+      </section>
+
+      <section class="recursos">
+        <h2>🖼️ Imágenes</h2>
+        <p>
+          Todas las imágenes del sitio proceden de 
+          <a href="https://pixabay.com/es/" target="_blank" rel="noopener noreferrer">Pixabay</a>, 
+          una plataforma que ofrece fotografías libres de derechos bajo la licencia Pixabay.
+        </p>
+        <ul>
+          <li><strong>Cascada Gullfoss</strong> — Fotografía de Pixabay.</li>
+          <li><strong>Auroras boreales</strong> — Fotografía de Pixabay.</li>
+          <li><strong>Laguna glaciar Jökulsárlón</strong> — Fotografía de Pixabay.</li>
+          <li><strong>Reikiavik</strong> — Fotografía de Pixabay.</li>
+          <li><strong>Galerías de imágenes</strong> — Todas las fotografías proceden de Pixabay.</li>
+        </ul>
+      </section>
+
+      <section class="videos">
+        <h2>🎥 Vídeos</h2>
+        <p>
+          Los vídeos incluidos en las páginas de detalle proceden de YouTube y pertenecen a sus respectivos autores.
+          Se indican los enlaces originales:
+        </p>
+        <ul>
+          <li>
+            <strong>Auroras boreales en Islandia</strong> —  
+            <a href="https://www.youtube.com/watch?v=NeZ0VAz0fyg" target="_blank" rel="noopener noreferrer">
+              Enlace al vídeo
+            </a>
+          </li>
+          <li>
+            <strong>Cascada Gullfoss – El poder del agua</strong> —  
+            <a href="https://www.youtube.com/watch?v=cpsHKuWToxc" target="_blank" rel="noopener noreferrer">
+              Enlace al vídeo
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="fuentes">
+        <h2>🔤 Tipografía y estilos</h2>
+        <ul>
+          <li>
+            Tipografía <strong>Roboto</strong> obtenida desde
+            <a href="https://fonts.google.com/specimen/Roboto" target="_blank" rel="noopener noreferrer">Google Fonts</a>.
+          </li>
+          <li>
+            Paleta de colores, estructura y animaciones diseñadas en <strong>Sass (SCSS)</strong>,
+            procesadas mediante <strong>Parcel</strong>.
+          </li>
+        </ul>
+      </section>
+
+      <section class="herramientas">
+        <h2>⚙️ Herramientas utilizadas</h2>
+        <ul>
+          <li><strong>Visual Studio Code</strong> — Editor de código.</li>
+          <li><strong>Node.js</strong> y <strong>npm</strong> — Gestión de dependencias.</li>
+          <li><strong>Parcel</strong> — Empaquetador de módulos.</li>
+          <li><strong>Git</strong> y <strong>GitHub</strong> — Control de versiones.</li>
+          <li><strong>Netlify</strong> — Despliegue y publicación del sitio web.</li>
+        </ul>
+      </section>
+
+      <section class="ai">
+        <h2>🤖 Asistencia en la redacción</h2>
+        <p>
+          Para la elaboración de algunos textos descriptivos y la elección de iconos o emojis se ha contado con el apoyo de
+          <strong>herramientas de generación de texto basadas en inteligencia artificial</strong>.
+          Todo el código, la maquetación y el diseño visual del sitio web han sido realizados manualmente.
+        </p>
+      </section>
+
+      <div class="volver">
+        <a href="index.html" class="boton-volver">Volver al inicio</a>
+      </div>
     </main>
 
     <footer>
-      <p>© 2025 Islandia en 7 días</p>
+      <p>Islandia en 7 días | Creado por Francisco Lifante Rivera | 2025 &copy;</p>
+      <a href="links.html" aria-current="page">Créditos y recursos</a>
     </footer>
 
     <script src="./js/main.js"></script>

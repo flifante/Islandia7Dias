@@ -1,32 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <title>Islandia en 7 días — Portada</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./assets/css/main.scss">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Descubre la cascada Gullfoss, una de las maravillas naturales más impresionantes de Islandia." />
+    <title>Cascada Gullfoss | Islandia en 7 días</title>
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
+    <link rel="stylesheet" href="./assets/css/main.scss" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   </head>
+
   <body>
     <header>
-      <h1>Islandia en 7 días</h1>
-      <nav>
-        <ul>
-          <li><a href="/">Inicio</a></li>
-          <li><a href="/categoria">Rutas</a></li>
-          <li><a href="/det1">Cascadas</a></li>
-          <li><a href="/det2">Reykjavík</a></li>
-          <li><a href="/links">Enlaces</a></li>
+      <h1>Cascada Gullfoss</h1>
+      <nav aria-label="Menú principal">
+        <ul class="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="categoria.html">Rutas y lugares</a></li>
+          <li><a href="links.html">Recursos y enlaces</a></li>
         </ul>
       </nav>
     </header>
 
-    <main>
-      <h2>Bienvenido a Islandia</h2>
-      <p>Tu guía para descubrir Islandia en una semana.</p>
+    <nav class="volver">
+      <a href="categoria.html" class="boton-volver">← Volver a rutas y lugares</a>
+    </nav>
+
+    <main id="contenido-principal" class="detalle">
+      <article class="contenido-detalle">
+        <img src="./assets/images/gullfoss.jpg" alt="Vista panorámica de la cascada Gullfoss" class="destacada" />
+        <h2>La joya del Círculo Dorado</h2>
+        <p>
+          La cascada Gullfoss, situada en el suroeste de Islandia, es uno de los lugares más visitados del país. 
+          Su nombre significa “cascada dorada” y se debe al brillo del agua cuando el sol se refleja en sus dos caídas principales.
+        </p>
+        <p>
+          El agua del río Hvítá cae desde una altura de 32 metros en dos saltos, creando una nube de vapor visible desde varios kilómetros.
+          Es un espectáculo natural impresionante, especialmente en invierno, cuando el entorno se cubre de hielo.
+        </p>
+        <p>
+          Gullfoss forma parte del famoso <strong>Círculo Dorado</strong>, una ruta turística que también incluye el Parque Nacional Thingvellir y el área geotérmica de Geysir.
+        </p>
+
+        <h3>Galería de imágenes</h3>
+        <div class="galeria">
+          <img src="./assets/images/gullfoss2.jpg" alt="Detalle del salto de agua en Gullfoss" data-caption="Detalle del salto de agua en Gullfoss" onclick="abrirLightbox(this)">
+          <img src="./assets/images/gullfoss3.jpg" alt="Cascada Gullfoss congelada en invierno" data-caption="Cascada Gullfoss congelada en invierno" onclick="abrirLightbox(this)">
+          <img src="./assets/images/gullfoss4.jpg" alt="Turistas contemplando la cascada Gullfoss" data-caption="Turistas contemplando la cascada Gullfoss" onclick="abrirLightbox(this)">
+        </div>
+
+        <h3>Vídeo de la cascada</h3>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/cpsHKuWToxc" title="Cascada Gullfoss en Islandia" allowfullscreen></iframe>
+        </div>
+      </article>
     </main>
 
+    <div id="lightbox" class="lightbox" onclick="cerrarLightbox()">
+      <img id="lightbox-img" src="./assets/images/placeholder.jpg" alt="Imagen ampliada">
+      <p id="lightbox-caption"></p>
+    </div>
+
     <footer>
-      <p>© 2025 Islandia en 7 días</p>
+      <p>Islandia en 7 días | Creado por Francisco Lifante Rivera | 2025 &copy;</p>
+      <a href="links.html">Créditos y recursos</a>
     </footer>
 
     <script src="./js/main.js"></script>

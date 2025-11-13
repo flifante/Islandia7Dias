@@ -1,32 +1,92 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <title>Islandia en 7 días — Portada</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./assets/css/main.scss">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explora los lugares más impresionantes de Islandia: rutas, cascadas, glaciares y auroras boreales."
+    />
+    <title>Rutas y lugares | Islandia en 7 días</title>
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
+    <link rel="stylesheet" href="./assets/css/main.scss" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
+
   <body>
     <header>
-      <h1>Islandia en 7 días</h1>
-      <nav>
-        <ul>
-          <li><a href="/">Inicio</a></li>
-          <li><a href="/categoria">Rutas</a></li>
-          <li><a href="/det1">Cascadas</a></li>
-          <li><a href="/det2">Reykjavík</a></li>
-          <li><a href="/links">Enlaces</a></li>
+      <h1>Rutas y lugares de Islandia</h1>
+      <nav aria-label="Menú principal">
+        <ul class="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="categoria.html" aria-current="page">Rutas y lugares</a></li>
+          <li><a href="links.html">Recursos y enlaces</a></li>
         </ul>
       </nav>
     </header>
 
-    <main>
-      <h2>Bienvenido a Islandia</h2>
-      <p>Tu guía para descubrir Islandia en una semana.</p>
+    <main id="contenido-principal" class="categoria">
+      <section>
+        <h2>Explora Islandia</h2>
+        <p>
+          Selecciona una de las rutas o lugares más emblemáticos de Islandia. Haz clic
+          para descubrir su magia en detalle.
+        </p>
+
+        <div class="grid-rutas">
+          <article>
+            <img src="./assets/images/gullfoss.jpg" alt="Cascada Gullfoss, Islandia"/>
+            <h3>Cascada Gullfoss</h3>
+            <p>
+              Una joya natural del Círculo Dorado, famosa por su doble caída y el sonido
+              ensordecedor del agua.
+            </p>
+            <a href="det1.html" class="enlace-detalle">Ver más</a>
+          </article>
+
+          <article>
+            <img src="./assets/images/aurora.jpg" alt="Aurora boreal sobre el cielo de Islandia"/>
+            <h3>Auroras Boreales</h3>
+            <p>
+              Uno de los mayores espectáculos naturales del planeta. Descubre cómo y
+              cuándo disfrutarlo.
+            </p>
+            <a href="det2.html" class="enlace-detalle">Ver más</a>
+          </article>
+
+          <article>
+            <img src="./assets/images/jokulsarlon.jpg" alt="Laguna glaciar Jökulsárlón, Islandia"/>
+            <h3>Laguna glaciar Jökulsárlón</h3>
+            <p>
+              Un lugar mágico donde los icebergs flotan entre montañas de hielo y focas
+              descansan sobre ellos.
+            </p>
+            <a class="enlace-detalle" aria-disabled="true">Próximamente</a>
+          </article>
+
+          <article>
+            <img src="./assets/images/reykjavik.jpg" alt="Vista aérea de Reikiavik, capital de Islandia"/>
+            <h3>Reikiavik</h3>
+            <p>
+              La vibrante capital islandesa combina modernidad y tradición en un entorno
+              natural único.
+            </p>
+            <a class="enlace-detalle" aria-disabled="true">Próximamente</a>
+          </article>
+        </div>
+      </section>
+
+      <nav class="volver">
+        <a href="index.html" class="boton-volver">← Volver al inicio</a>
+      </nav>
     </main>
 
     <footer>
-      <p>© 2025 Islandia en 7 días</p>
+      <p>Islandia en 7 días | Creado por Francisco Lifante Rivera | 2025 &copy;</p>
+      <a href="links.html">Créditos y recursos</a>
     </footer>
 
     <script src="./js/main.js"></script>

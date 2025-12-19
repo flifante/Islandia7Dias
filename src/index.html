@@ -41,26 +41,22 @@
           <h2>Una aventura entre hielo y fuego</h2>
           
           <!-- SVG PEC 2 -->
-          <svg
-            class="svg-islandia"
-            viewBox="0 0 300 120"
-            role="img"
-            aria-labelledby="aurora-islandia-svg-titulo"
-            focusable="false"
-          >
-          <title id="aurora-islandia-svg-titulo">
-            Ilustración animada de montañas y aurora boreal en Islandia
-          </title>
-
-            <!-- Montañas -->
-            <path d="M20 100 L90 40 L160 100 Z" class="montana" />
-            <path d="M120 100 L200 30 L280 100 Z" class="montana" />
-            <!-- Aurora -->
-            <path d="M10 30 C80 10, 140 50, 220 30" class="aurora" />
-          </svg>
+          <div class="svg-wrapper">
+            <svg class="svg-islandia" viewBox="0 0 300 120" role="img" aria-labelledby="aurora-islandia-svg-titulo" focusable="false">
+              <title id="aurora-islandia-svg-titulo">
+                Ilustración animada de montañas y aurora boreal en Islandia
+              </title>
+              <path d="M20 100 L90 40 L160 100 Z" class="montana"></path>
+              <path d="M120 100 L200 30 L280 100 Z" class="montana"></path>
+              <path d="M10 30 C80 10, 140 50, 220 30" class="aurora"></path>
+            </svg>          
+          </div>
           
           <p>Explora los paisajes más impresionantes del planeta recorriendo Islandia en una semana. Naturaleza, cultura y libertad en estado puro.</p>
-          <a class="boton" href="categoria.html">Descubre las rutas</a>
+          
+          <div class="cta-container">
+            <a class="boton" href="categoria.html">Descubre las rutas</a>
+          </div>
         </div>
       </section>
 

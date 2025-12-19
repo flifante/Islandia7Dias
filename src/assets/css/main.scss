@@ -465,6 +465,25 @@ footer {
     auroraFlotar 4s ease-in-out infinite alternate;
 }
 
+.svg-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden; /* Esto corta cualquier área invisible que tape el botón */
+    pointer-events: none; /* Esto permite que los clics pasen a través del SVG si algo fallara */
+}
+
+.hero-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boton {
+    position: relative;
+    z-index: 5; /* Asegura que el botón esté por encima de cualquier capa del hero */
+}
+
 /* Animación */
 @keyframes auroraMovimiento {
   to {

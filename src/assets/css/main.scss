@@ -59,11 +59,13 @@ header {
   background: $color-card;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
   text-align: center;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 
-  &:hover { transform: translateY(-4px); box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6); }
+  &:hover { 
+    transform: translateY(-4px); 
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+  }
 
   img {
     width: 100%;
@@ -71,6 +73,7 @@ header {
     object-fit: cover;
     filter: brightness(70%);
     border-bottom: 3px solid $color-principal;
+    overflow: hidden;
   }
 
   .hero-texto {

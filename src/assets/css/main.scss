@@ -92,6 +92,7 @@ header {
 
     .boton {
       position: relative;
+      z-index: 100;
       display: inline-block;
       background: $color-boton;
       color: white;
@@ -435,8 +436,10 @@ footer {
 /* PEC 2 - SVG */
 .svg-islandia {
   width: 260px;
+  height: 120px;
   margin: 1.2em auto;
   display: block;
+  overflow: visible;
   pointer-events: none;
 }
 

@@ -24,9 +24,37 @@
 
     <main id="contenido-principal">
       <section class="hero">
-        <img src="./assets/images/islandia-hero.jpg" alt="Paisaje de montañas y cascadas en Islandia" />
+        <img
+          src="./assets/images/islandia-hero.jpg"
+          srcset="
+            ./assets/images/islandia-hero.jpg?width=480 480w,
+            ./assets/images/islandia-hero.jpg?width=800 800w,
+            ./assets/images/islandia-hero.jpg?width=1200 1200w"
+          sizes="
+            (max-width: 600px) 90vw,
+            (max-width: 1000px) 100vw,
+            1000px"
+          alt="Paisaje de montañas y cascadas en Islandia"
+        />
+
         <div class="hero-texto">
           <h2>Una aventura entre hielo y fuego</h2>
+          
+          <!-- SVG PEC 2 -->
+          <svg
+            class="svg-islandia"
+            viewBox="0 0 300 120"
+            role="img"
+            aria-labelledby="aurora-islandia-svg-titulo"
+            focusable="false"
+          >
+            <!-- Montañas -->
+            <path d="M20 100 L90 40 L160 100 Z" class="montana" />
+            <path d="M120 100 L200 30 L280 100 Z" class="montana" />
+            <!-- Aurora -->
+            <path d="M10 30 C80 10, 140 50, 220 30" class="aurora" />
+          </svg>
+          
           <p>Explora los paisajes más impresionantes del planeta recorriendo Islandia en una semana. Naturaleza, cultura y libertad en estado puro.</p>
           <a class="boton" href="categoria.html">Descubre las rutas</a>
         </div>

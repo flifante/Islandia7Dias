@@ -20,7 +20,8 @@
     "postcss": "^8.5.6",
     "posthtml-include": "^2.0.1",
     "rimraf": "^6.1.0",
-    "sass": "^1.93.3"
+    "sass": "^1.93.3",
+    "sharp": "^0.33.5"
   },
   "dependencies": {
     "core-js": "^3.46.0",

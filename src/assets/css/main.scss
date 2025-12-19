@@ -189,10 +189,28 @@ section {
 
     img {
       width: 100%;
-      border-radius: 10px;
-      margin-bottom: 0.8em;
-      object-fit: cover;
       aspect-ratio: 16 / 9;
+      object-fit: cover;
+      margin-bottom: 0.8em;
+      
+      /* Clip-path */
+      clip-path: polygon(
+        0 0,
+        100% 0,
+        95% 100%,
+        0 90%
+      );
+      transition: clip-path 0.4s ease, transform 0.3s ease;
+    }
+
+    /* Clip-path animado al hacer hover sobre la imagen destacada */
+    &:hover img {
+      clip-path: polygon(
+        0 5%,
+        100% 0,
+        100% 95%,
+        5% 100%
+      );
     }
 
     h3 { color: $color-secundario; margin-bottom: 0.5em; }
@@ -384,7 +402,16 @@ footer {
 @media (max-width: 768px) {
   .hero {
     margin: 1.5em;
-    img { height: 45vh; }
+    img { 
+      height: 45vh;
+
+      clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 90%,
+        0 100%
+      );
+    }
 
     .hero-texto {
       padding: 1.5em;
@@ -399,4 +426,51 @@ footer {
   header h1 { font-size: 1.5em; }
   .hero-texto { font-size: 0.9em; padding: 1.5em; }
   .boton { padding: 0.6em 1.2em; }
+}
+
+
+/* PEC 2 - SVG */
+.svg-islandia {
+  width: 260px;
+  margin: 1.2em auto;
+  display: block;
+}
+
+/* Montañas */
+.svg-islandia .montana {
+  fill: none;
+  stroke: $color-secundario;
+  stroke-width: 3;
+  stroke-linejoin: round;
+  opacity: 0.85;
+}
+
+/* Aurora animada */
+.svg-islandia .aurora {
+  fill: none;
+  stroke: $color-boton;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation:
+    auroraMovimiento 3s ease-out forwards,
+    auroraFlotar 4s ease-in-out infinite alternate;
+}
+
+/* Animación */
+@keyframes auroraMovimiento {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes auroraFlotar {
+  from {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  to {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
 }

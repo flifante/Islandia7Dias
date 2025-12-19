@@ -28,7 +28,14 @@
 
     <main id="contenido-principal" class="detalle">
       <article class="contenido-detalle">
-        <img src="./assets/images/gullfoss.jpg" alt="Vista panorámica de la cascada Gullfoss" class="destacada" />
+        <picture>
+          <!-- Imagen para pantallas grandes -->
+          <source srcset="./assets/images/gullfoss-desktop.jpg" media="(min-width: 768px)" type="image/jpeg"/>
+          <!-- Imagen para teléfonos móviles -->
+          <source srcset="./assets/images/gullfoss-mobile.jpg" media="(max-width: 767px)" type="image/jpeg"/>
+          <!-- Fallback -->
+          <img src="./assets/images/gullfoss-desktop.jpg" alt="Cascada Gullfoss, una de las cascadas más impresionantes de Islandia" class="destacada"/>
+        </picture>
         <h2>La joya del Círculo Dorado</h2>
         <p>
           La cascada Gullfoss, situada en el suroeste de Islandia, es uno de los lugares más visitados del país. 

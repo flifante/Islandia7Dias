@@ -10,10 +10,12 @@
     <title>Rutas y lugares | Islandia en 7 días</title>
     <link rel="icon" type="image/png" href="./assets/images/favicon.png">
     <link rel="stylesheet" href="./assets/css/main.scss">
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    </noscript>
   </head>
 
   <body>
@@ -37,15 +39,40 @@
         </p>
 
         <div class="grid-rutas">
+          <!-- 1) Gullfoss (prioritaria en esta página) -->
           <article>
-            <img
-              src="./assets/images/gullfoss.jpg"
-              srcset="
-                ./assets/images/gullfoss.jpg 1x,
-                ./assets/images/gullfoss.jpg?width=800 2x"
-              alt="Cascada Gullfoss, Islandia"
-              loading="lazy"
-            >
+            <picture>
+              <source
+                type="image/avif"
+                srcset="
+                  ./assets/images/gullfoss.jpg?as=avif&width=360 360w,
+                  ./assets/images/gullfoss.jpg?as=avif&width=540 540w,
+                  ./assets/images/gullfoss.jpg?as=avif&width=800 800w"
+                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+              >
+              <source
+                type="image/webp"
+                srcset="
+                  ./assets/images/gullfoss.jpg?as=webp&width=360 360w,
+                  ./assets/images/gullfoss.jpg?as=webp&width=540 540w,
+                  ./assets/images/gullfoss.jpg?as=webp&width=800 800w"
+                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+              >
+              <img
+                src="./assets/images/gullfoss.jpg?width=800"
+                srcset="
+                  ./assets/images/gullfoss.jpg?width=360 360w,
+                  ./assets/images/gullfoss.jpg?width=540 540w,
+                  ./assets/images/gullfoss.jpg?width=800 800w"
+                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+                alt="Cascada Gullfoss, Islandia"
+                width="800"
+                height="450"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+              >
+            </picture>
             <h3>Cascada Gullfoss</h3>
             <p>
               Una joya natural del Círculo Dorado, famosa por su doble caída y el sonido
@@ -54,15 +81,39 @@
             <a href="det1.html" class="enlace-detalle">Ver más</a>
           </article>
 
+          <!-- 2) Aurora (lazy + picture) -->
           <article>
-            <img
-              src="./assets/images/aurora.jpg"
-              srcset="
-                ./assets/images/aurora.jpg 1x,
-                ./assets/images/aurora.jpg?width=800 2x"
-              alt="Aurora boreal sobre el cielo de Islandia"
-              loading="lazy"
-            >
+            <picture>
+              <source
+                type="image/avif"
+                srcset="
+                  ./assets/images/aurora.jpg?as=avif&width=360 360w,
+                  ./assets/images/aurora.jpg?as=avif&width=540 540w,
+                  ./assets/images/aurora.jpg?as=avif&width=800 800w"
+                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+              >
+              <source
+                type="image/webp"
+                srcset="
+                  ./assets/images/aurora.jpg?as=webp&width=360 360w,
+                  ./assets/images/aurora.jpg?as=webp&width=540 540w,
+                  ./assets/images/aurora.jpg?as=webp&width=800 800w"
+                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+              >
+              <img
+                src="./assets/images/aurora.jpg?width=800"
+                srcset="
+                  ./assets/images/aurora.jpg?width=360 360w,
+                  ./assets/images/aurora.jpg?width=540 540w,
+                  ./assets/images/aurora.jpg?width=800 800w"
+                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+                alt="Aurora boreal sobre el cielo de Islandia"
+                width="800"
+                height="450"
+                loading="lazy"
+                decoding="async"
+              >
+            </picture>
             <h3>Auroras Boreales</h3>
             <p>
               Uno de los mayores espectáculos naturales del planeta. Descubre cómo y
@@ -71,15 +122,39 @@
             <a href="det2.html" class="enlace-detalle">Ver más</a>
           </article>
 
+          <!-- 3) Jökulsárlón (lazy + picture) -->
           <article>
-            <img
-              src="./assets/images/jokulsarlon.jpg"
-              srcset="
-                ./assets/images/jokulsarlon.jpg 1x,
-                ./assets/images/jokulsarlon.jpg?width=800 2x"
-              alt="Laguna glaciar Jökulsárlón, Islandia"
-              loading="lazy"
-            >
+            <picture>
+              <source
+                type="image/avif"
+                srcset="
+                  ./assets/images/jokulsarlon.jpg?as=avif&width=360 360w,
+                  ./assets/images/jokulsarlon.jpg?as=avif&width=540 540w,
+                  ./assets/images/jokulsarlon.jpg?as=avif&width=800 800w"
+                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+              >
+              <source
+                type="image/webp"
+                srcset="
+                  ./assets/images/jokulsarlon.jpg?as=webp&width=360 360w,
+                  ./assets/images/jokulsarlon.jpg?as=webp&width=540 540w,
+                  ./assets/images/jokulsarlon.jpg?as=webp&width=800 800w"
+                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+              >
+              <img
+                src="./assets/images/jokulsarlon.jpg?width=800"
+                srcset="
+                  ./assets/images/jokulsarlon.jpg?width=360 360w,
+                  ./assets/images/jokulsarlon.jpg?width=540 540w,
+                  ./assets/images/jokulsarlon.jpg?width=800 800w"
+                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+                alt="Laguna glaciar Jökulsárlón, Islandia"
+                width="800"
+                height="450"
+                loading="lazy"
+                decoding="async"
+              >
+            </picture>
             <h3>Laguna glaciar Jökulsárlón</h3>
             <p>
               Un lugar mágico donde los icebergs flotan entre montañas de hielo y focas
@@ -88,15 +163,39 @@
             <a class="enlace-detalle" aria-disabled="true">Próximamente</a>
           </article>
 
+          <!-- 4) Reikiavik (lazy + picture) -->
           <article>
-            <img
-              src="./assets/images/reykjavik.jpg"
-              srcset="
-                ./assets/images/reykjavik.jpg 1x,
-                ./assets/images/reykjavik.jpg?width=800 2x"
-              alt="Vista aérea de Reikiavik, capital de Islandia"
-              loading="lazy"
-            >
+            <picture>
+              <source
+                type="image/avif"
+                srcset="
+                  ./assets/images/reykjavik.jpg?as=avif&width=360 360w,
+                  ./assets/images/reykjavik.jpg?as=avif&width=540 540w,
+                  ./assets/images/reykjavik.jpg?as=avif&width=800 800w"
+                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+              >
+              <source
+                type="image/webp"
+                srcset="
+                  ./assets/images/reykjavik.jpg?as=webp&width=360 360w,
+                  ./assets/images/reykjavik.jpg?as=webp&width=540 540w,
+                  ./assets/images/reykjavik.jpg?as=webp&width=800 800w"
+                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+              >
+              <img
+                src="./assets/images/reykjavik.jpg?width=800"
+                srcset="
+                  ./assets/images/reykjavik.jpg?width=360 360w,
+                  ./assets/images/reykjavik.jpg?width=540 540w,
+                  ./assets/images/reykjavik.jpg?width=800 800w"
+                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+                alt="Vista aérea de Reikiavik, capital de Islandia"
+                width="800"
+                height="450"
+                loading="lazy"
+                decoding="async"
+              >
+            </picture>
             <h3>Reikiavik</h3>
             <p>
               La vibrante capital islandesa combina modernidad y tradición en un entorno

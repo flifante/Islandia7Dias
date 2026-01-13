@@ -8,11 +8,16 @@ $color-texto: #f5f5f5;
 $color-boton: #ee9b00;
 $color-boton-hover: #ca6702;
 $color-card: #1c1c1c;
-$fuente-base: 'Roboto', sans-serif;
+
+$fuente-base: "Roboto", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
 $ancho-maximo: 1200px;
 
 /* Estilos globales */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: $fuente-base;
@@ -24,7 +29,11 @@ body {
 a {
   text-decoration: none;
   color: $color-secundario;
-  &:hover, &:focus { color: $color-boton; }
+
+  &:hover,
+  &:focus {
+    color: $color-boton;
+  }
 }
 
 /* Cabecera y menú */
@@ -34,7 +43,10 @@ header {
   padding: 1em 0;
   text-align: center;
 
-  h1 { font-size: 2em; margin-bottom: 0.5em; }
+  h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+  }
 
   nav {
     ul {
@@ -43,16 +55,23 @@ header {
       justify-content: center;
       gap: 1.5em;
     }
+
     a {
       color: white;
       font-weight: bold;
-      &[aria-current='page'] { border-bottom: 2px solid $color-secundario; }
-      &:hover { color: $color-secundario; }
+
+      &[aria-current="page"] {
+        border-bottom: 2px solid $color-secundario;
+      }
+
+      &:hover {
+        color: $color-secundario;
+      }
     }
   }
 }
 
-/* Seccion de portada */
+/* Sección de portada (Hero) */
 .hero {
   max-width: 1000px;
   margin: 2em auto;
@@ -61,9 +80,10 @@ header {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   text-align: center;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
 
-  &:hover { 
-    transform: translateY(-4px); 
+  &:hover {
+    transform: translateY(-4px);
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
   }
 
@@ -73,26 +93,39 @@ header {
     object-fit: cover;
     filter: brightness(70%);
     border-bottom: 3px solid $color-principal;
-    overflow: hidden;
+    display: block;
   }
 
   .hero-texto {
     padding: 2em 2.5em;
-    background: linear-gradient(180deg, rgba(20,20,20,0.9) 0%, rgba(10,10,10,1) 100%);
+    background: linear-gradient(180deg, rgba(20, 20, 20, 0.9) 0%, rgba(10, 10, 10, 1) 100%);
     color: white;
+
+    /* Mantiene el layout “humano” y evita solapes raros */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9em;
 
     h2 {
       font-size: 2em;
-      margin-bottom: 0.4em;
+      margin-bottom: 0.1em;
       color: $color-secundario;
-      text-shadow: 0 0 10px rgba(0,0,0,0.4);
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     }
 
-    p { font-size: 1.05em; color: #eaeaea; margin-bottom: 1.2em; }
+    p {
+      font-size: 1.05em;
+      color: #eaeaea;
+      margin: 0;
+      text-align: left; /* visualmente como lo tenías en index */
+      width: 100%;
+      max-width: 820px;
+    }
 
     .boton {
       position: relative;
-      z-index: 100;
+      z-index: 10;
       display: inline-block;
       background: $color-boton;
       color: white;
@@ -107,55 +140,140 @@ header {
 
       &:before {
         content: "";
-        position: absolute; top: 0; left: -100%;
-        width: 100%; height: 100%;
-        background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.4) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
         transition: left 0.5s ease;
+        pointer-events: none;
       }
 
-      &:hover { background: $color-boton-hover; transform: translateY(-3px); }
-      &:hover:before { left: 100%; }
+      &:hover {
+        background: $color-boton-hover;
+        transform: translateY(-3px);
+      }
+
+      &:hover:before {
+        left: 100%;
+      }
     }
+  }
+
+  /* PEC 2 - SVG (aislado al hero para no afectar a otras páginas) */
+  .svg-islandia {
+    width: 260px;
+    height: 120px;
+    margin: 0.2em auto 0;
+    display: block;
+    overflow: visible;
+    pointer-events: none;
+  }
+
+  .svg-islandia .montana {
+    fill: none;
+    stroke: $color-secundario;
+    stroke-width: 3;
+    stroke-linejoin: round;
+    opacity: 0.85;
+  }
+
+  .svg-islandia .aurora {
+    fill: none;
+    stroke: $color-boton;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: auroraMovimiento 3s ease-out forwards, auroraFlotar 4s ease-in-out infinite alternate;
   }
 }
 
-/* Aninacion de los botones */
-.hero .boton { animation: pulsoSuave 2.5s ease-in-out infinite; box-shadow: 0 0 8px rgba(238,155,0,0.5); }
+/* Animación de los botones (mantengo tu estilo) */
+.hero .boton {
+  animation: pulsoSuave 2.5s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(238, 155, 0, 0.5);
+}
 
 @keyframes pulsoSuave {
-  0%, 100% { transform: scale(1);    box-shadow: 0 0 8px rgba(238,155,0,0.5); }
-  50%      { transform: scale(1.05); box-shadow: 0 0 14px rgba(238,155,0,0.8); }
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(238, 155, 0, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 14px rgba(238, 155, 0, 0.8);
+  }
 }
 
 @keyframes glowPulse {
-  0%   { box-shadow: 0 0 10px rgba(238,155,0,0.4), 0 0 20px rgba(238,155,0,0.2); }
-  50%  { box-shadow: 0 0 20px rgba(238,155,0,0.7), 0 0 35px rgba(238,155,0,0.4); }
-  100% { box-shadow: 0 0 10px rgba(238,155,0,0.4), 0 0 20px rgba(238,155,0,0.2); }
+  0% {
+    box-shadow: 0 0 10px rgba(238, 155, 0, 0.4), 0 0 20px rgba(238, 155, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(238, 155, 0, 0.7), 0 0 35px rgba(238, 155, 0, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(238, 155, 0, 0.4), 0 0 20px rgba(238, 155, 0, 0.2);
+  }
 }
 
+/* Efectos generales de botones (mantengo) */
 .boton {
   position: relative;
   transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(238,155,0,0.3);
+  box-shadow: 0 0 10px rgba(238, 155, 0, 0.3);
   animation: glowPulse 3s infinite ease-in-out;
-  &:hover  { box-shadow: 0 0 25px rgba(238,155,0,0.8); transform: translateY(-3px); }
-  &:active { transform: scale(0.97); box-shadow: 0 0 12px rgba(238,155,0,0.6); }
+
+  &:hover {
+    box-shadow: 0 0 25px rgba(238, 155, 0, 0.8);
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    transform: scale(0.97);
+    box-shadow: 0 0 12px rgba(238, 155, 0, 0.6);
+  }
 }
 
 .enlace-detalle {
   position: relative;
   transition: all 0.3s ease;
-  &:hover  { box-shadow: 0 0 18px rgba(0,180,216,0.55); transform: translateY(-3px); }
-  &:active { transform: scale(0.97); box-shadow: 0 0 8px rgba(0,180,216,0.4); }
+
+  &:hover {
+    box-shadow: 0 0 18px rgba(0, 180, 216, 0.55);
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    transform: scale(0.97);
+    box-shadow: 0 0 8px rgba(0, 180, 216, 0.4);
+  }
 }
 
 .boton-volver {
   position: relative;
   transition: all 0.3s ease;
-  &:hover  { box-shadow: 0 0 16px rgba(144,224,239,0.5); transform: translateY(-3px); }
-  &:active { transform: scale(0.97); box-shadow: 0 0 6px rgba(144,224,239,0.35); }
+
+  &:hover {
+    box-shadow: 0 0 16px rgba(144, 224, 239, 0.5);
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    transform: scale(0.97);
+    box-shadow: 0 0 6px rgba(144, 224, 239, 0.35);
+  }
 }
 
+/* Evita hover/animaciones en enlaces deshabilitados */
 .enlace-detalle[aria-disabled="true"],
 .enlace-detalle[disabled],
 .enlace-detalle[href="#"] {
@@ -165,17 +283,29 @@ header {
   animation: none !important;
 }
 
-/* Seccion de contenido */
-main { max-width: $ancho-maximo; margin: 0 auto; padding: 2em 1em; }
+/* Sección de contenido */
+main {
+  max-width: $ancho-maximo;
+  margin: 0 auto;
+  padding: 2em 1em;
+}
 
 section {
   margin-bottom: 3em;
 
-  h2, h3 { color: $color-secundario; text-align: center; margin-bottom: 1em; }
-  p { text-align: justify; }
+  h2,
+  h3 {
+    color: $color-secundario;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  p {
+    text-align: justify;
+  }
 }
 
-/* Grid de categorias y destacados */
+/* Grid de categorías y destacados */
 .grid-rutas,
 .grid-destacados {
   display: grid;
@@ -185,40 +315,41 @@ section {
   article {
     background: $color-card;
     border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
     padding: 1em;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-    &:hover { transform: translateY(-5px); box-shadow: 0 4px 10px rgba(0,0,0,0.8); }
 
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    /* IMPORTANTE: aquí NO forzamos aspect-ratio global */
     img {
       width: 100%;
-      aspect-ratio: 16 / 9;
+      height: auto;
       object-fit: cover;
       margin-bottom: 0.8em;
-      
+      display: block;
+
       /* Clip-path */
-      clip-path: polygon(
-        0 0,
-        100% 0,
-        95% 100%,
-        0 90%
-      );
+      clip-path: polygon(0 0, 100% 0, 95% 100%, 0 90%);
       transition: clip-path 0.4s ease, transform 0.3s ease;
     }
 
-    /* Clip-path animado al hacer hover sobre la imagen destacada */
     &:hover img {
-      clip-path: polygon(
-        0 5%,
-        100% 0,
-        100% 95%,
-        5% 100%
-      );
+      clip-path: polygon(0 5%, 100% 0, 100% 95%, 5% 100%);
     }
 
-    h3 { color: $color-secundario; margin-bottom: 0.5em; }
-    p  { margin-bottom: 1em; }
+    h3 {
+      color: $color-secundario;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      margin-bottom: 1em;
+    }
 
     .enlace-detalle {
       display: inline-block;
@@ -227,9 +358,11 @@ section {
       padding: 0.6em 1.2em;
       border-radius: 5px;
       font-weight: bold;
-      &:hover { background: color.scale($color-principal, $lightness: -15%); }
 
-      /* Botón "Próximamente" deshabilitado y con otro color */
+      &:hover {
+        background: color.scale($color-principal, $lightness: -15%);
+      }
+
       &[aria-disabled="true"],
       &[disabled],
       &[href="#"] {
@@ -246,7 +379,28 @@ section {
   }
 }
 
-/* Paginas de detalle */
+/* REGLAS CLAVE: recupera la estética “de antes” por página */
+
+/* Home (index): tarjetas más compactas, como las capturas “antes” */
+.grid-destacados article img {
+  aspect-ratio: 4 / 3; /* más “alto” que 16/9, evita el efecto panorámico */
+  object-fit: cover;
+}
+
+/* Categoría: tarjetas más estándar (sin estirar raro en escritorio) */
+.grid-rutas article img {
+  aspect-ratio: 16 / 10; /* queda parecido a tu diseño original con clip-path */
+  object-fit: cover;
+}
+
+/* Forzar 3 columnas en escritorio en categoría para que la 4ª baje (como antes) */
+@media (min-width: 1024px) {
+  .grid-rutas {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Páginas de detalle */
 .detalle {
   text-align: center;
 
@@ -262,7 +416,10 @@ section {
     text-align: left;
     margin: 0 auto;
     max-width: 800px;
-    p { margin-bottom: 1em; }
+
+    p {
+      margin-bottom: 1em;
+    }
   }
 }
 
@@ -280,7 +437,7 @@ section {
   font-weight: bold;
 }
 
-/* Galeria de imagenes de pagina de detalle */
+/* Galería detalle */
 .galeria {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -295,11 +452,15 @@ section {
     border: 2px solid $color-secundario;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    &:hover { transform: scale(1.03); box-shadow: 0 0 10px rgba(255,255,255,0.2); }
+
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
   }
 }
 
-/* Estilos Lightbox */
+/* Lightbox */
 .lightbox {
   display: none;
   position: fixed;
@@ -316,7 +477,7 @@ section {
 
   img {
     max-width: 90%;
-    max-height: 85%; // Un pelín menos para dejar sitio para colocar el pie de foto
+    max-height: 85%;
     border-radius: 10px;
     box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
   }
@@ -330,51 +491,64 @@ section {
   }
 }
 
-/* Videos responsive */
+/* Vídeo responsive */
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* configuración para 16:9 */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   max-width: 900px;
   margin: 3em auto;
   border-radius: 10px;
   background: $color-card;
-  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 
   iframe {
-    position: absolute; top: 0; left: 0;
-    width: 100%; height: 100%;
-    border: 0; border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 10px;
   }
 }
 
-/* Pagina links */
+/* Página links */
 .links {
   section {
     background: $color-card;
     border-radius: 10px;
     padding: 1.5em;
     margin-bottom: 2em;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   }
 
-  h2, h3 { color: $color-secundario; margin-bottom: 1em; }
+  h2,
+  h3 {
+    color: $color-secundario;
+    margin-bottom: 1em;
+  }
 
   ul {
     list-style: disc;
     padding-left: 1.5em;
 
-    li { margin-bottom: 0.5em; }
+    li {
+      margin-bottom: 0.5em;
+    }
 
     a {
       color: $color-secundario;
-      &:hover { color: $color-boton; }
+
+      &:hover {
+        color: $color-boton;
+      }
     }
   }
 }
 
-/* Boton volver atras */
+/* Botón volver */
 .volver {
   text-align: center;
   margin: 1.5em 0;
@@ -387,11 +561,14 @@ section {
     border-radius: 5px;
     font-weight: bold;
     transition: background 0.3s ease;
-    &:hover { background: color.scale($color-principal, $lightness: -15%); }
+
+    &:hover {
+      background: color.scale($color-principal, $lightness: -15%);
+    }
   }
 }
 
-/* Pie de pagina */
+/* Footer */
 footer {
   background: black;
   color: white;
@@ -399,97 +576,66 @@ footer {
   padding: 1.5em;
   font-size: 0.9em;
 
-  a { color: $color-secundario; &:hover { text-decoration: underline; } }
+  a {
+    color: $color-secundario;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
-/* Configuracion responsive */
+/* Responsive */
 @media (max-width: 768px) {
   .hero {
     margin: 1.5em;
-    img { 
-      height: 45vh;
 
-      clip-path: polygon(
-        0 0,
-        100% 0,
-        100% 90%,
-        0 100%
-      );
+    img {
+      height: 45vh;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
     }
 
     .hero-texto {
       padding: 1.5em;
-      h2 { font-size: 1.5em; }
-      p { font-size: 0.95em; }
-      .boton { padding: 0.7em 1.4em; font-size: 0.9em; }
+
+      h2 {
+        font-size: 1.5em;
+      }
+
+      p {
+        font-size: 0.95em;
+      }
+
+      .boton {
+        padding: 0.7em 1.4em;
+        font-size: 0.9em;
+      }
     }
   }
 }
 
 @media (max-width: 600px) {
-  header h1 { font-size: 1.5em; }
-  .hero-texto { font-size: 0.9em; padding: 1.5em; }
-  .boton { padding: 0.6em 1.2em; }
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  .hero-texto {
+    font-size: 0.9em;
+    padding: 1.5em;
+  }
+
+  .boton {
+    padding: 0.6em 1.2em;
+  }
 }
 
-
-/* PEC 2 - SVG */
-.svg-islandia {
-  width: 260px;
-  height: 120px;
-  margin: 1.2em auto;
-  display: block;
-  overflow: visible;
-  pointer-events: none;
-}
-
-/* Montañas */
-.svg-islandia .montana {
-  fill: none;
-  stroke: $color-secundario;
-  stroke-width: 3;
-  stroke-linejoin: round;
-  opacity: 0.85;
-}
-
-/* Aurora animada */
-.svg-islandia .aurora {
-  fill: none;
-  stroke: $color-boton;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-dasharray: 200;
-  stroke-dashoffset: 200;
-  animation:
-    auroraMovimiento 3s ease-out forwards,
-    auroraFlotar 4s ease-in-out infinite alternate;
-}
-
-.svg-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    overflow: hidden; /* Esto corta cualquier área invisible que tape el botón */
-    pointer-events: none; /* Esto permite que los clics pasen a través del SVG si algo fallara */
-}
-
-.hero-texto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.boton {
-    position: relative;
-    z-index: 5; /* Asegura que el botón esté por encima de cualquier capa del hero */
-}
-
-/* Animación */
+/* Animaciones SVG */
 @keyframes auroraMovimiento {
   to {
     stroke-dashoffset: 0;
   }
 }
+
 @keyframes auroraFlotar {
   from {
     transform: translateY(0);

@@ -7,6 +7,7 @@
     <title>Islandia en 7 días</title>
     <link rel="icon" href="./assets/images/favicon.png" type="image/png">
     <link rel="stylesheet" href="./assets/css/main.scss">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -14,7 +15,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     </noscript>
   </head>
-  
+
   <body>
     <header>
       <h1>Islandia en 7 días</h1>
@@ -29,23 +30,51 @@
 
     <main id="contenido-principal">
       <section class="hero">
-        <img
-          src="./assets/images/islandia-hero.jpg"
-          srcset="
-            ./assets/images/islandia-hero.jpg?width=480 480w,
-            ./assets/images/islandia-hero.jpg?width=800 800w,
-            ./assets/images/islandia-hero.jpg?width=1200 1200w"
-          sizes="
-            (max-width: 600px) 90vw,
-            (max-width: 1000px) 100vw,
-            1000px"
-          alt="Paisaje de montañas y cascadas en Islandia"
-          fetchpriority="high"
-        >
+        <picture>
+          <source
+            type="image/avif"
+            srcset="
+              ./assets/images/islandia-hero.jpg?as=avif&width=480 480w,
+              ./assets/images/islandia-hero.jpg?as=avif&width=800 800w,
+              ./assets/images/islandia-hero.jpg?as=avif&width=1200 1200w"
+            sizes="
+              (max-width: 600px) 90vw,
+              (max-width: 1000px) 100vw,
+              1000px"
+          >
+          <source
+            type="image/webp"
+            srcset="
+              ./assets/images/islandia-hero.jpg?as=webp&width=480 480w,
+              ./assets/images/islandia-hero.jpg?as=webp&width=800 800w,
+              ./assets/images/islandia-hero.jpg?as=webp&width=1200 1200w"
+            sizes="
+              (max-width: 600px) 90vw,
+              (max-width: 1000px) 100vw,
+              1000px"
+          >
+          <img
+            src="./assets/images/islandia-hero.jpg?width=1200"
+            srcset="
+              ./assets/images/islandia-hero.jpg?width=480 480w,
+              ./assets/images/islandia-hero.jpg?width=800 800w,
+              ./assets/images/islandia-hero.jpg?width=1200 1200w"
+            sizes="
+              (max-width: 600px) 90vw,
+              (max-width: 1000px) 100vw,
+              1000px"
+            alt="Paisaje de montañas y cascadas en Islandia"
+            width="1200"
+            height="675"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          >
+        </picture>
 
         <div class="hero-texto">
           <h2>Una aventura entre hielo y fuego</h2>
-          
+
           <!-- SVG PEC 2 -->
           <div class="svg-wrapper">
             <svg class="svg-islandia" viewBox="0 0 300 120" role="img" aria-labelledby="aurora-islandia-svg-titulo" focusable="false">
@@ -55,11 +84,11 @@
               <path d="M20 100 L90 40 L160 100 Z" class="montana"></path>
               <path d="M120 100 L200 30 L280 100 Z" class="montana"></path>
               <path d="M10 30 C80 10, 140 50, 220 30" class="aurora"></path>
-            </svg>          
+            </svg>
           </div>
-          
+
           <p>Explora los paisajes más impresionantes del planeta recorriendo Islandia en una semana. Naturaleza, cultura y libertad en estado puro.</p>
-          
+
           <div class="cta-container">
             <a class="boton" href="categoria.html">Descubre las rutas</a>
           </div>
@@ -70,32 +99,76 @@
         <h2>Lugares imprescindibles</h2>
         <div class="grid-destacados">
           <article>
-            <img
-              src="./assets/images/gullfoss.jpg"
-              srcset="
-                ./assets/images/gullfoss.jpg?width=360 360w,
-                ./assets/images/gullfoss.jpg?width=540 540w,
-                ./assets/images/gullfoss.jpg?width=800 800w"
-              sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
-              alt="Cascada Gullfoss en Islandia"
-              loading="lazy"
-            />
+            <picture>
+              <source
+                type="image/avif"
+                srcset="
+                  ./assets/images/gullfoss.jpg?as=avif&width=360 360w,
+                  ./assets/images/gullfoss.jpg?as=avif&width=540 540w,
+                  ./assets/images/gullfoss.jpg?as=avif&width=800 800w"
+                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+              >
+              <source
+                type="image/webp"
+                srcset="
+                  ./assets/images/gullfoss.jpg?as=webp&width=360 360w,
+                  ./assets/images/gullfoss.jpg?as=webp&width=540 540w,
+                  ./assets/images/gullfoss.jpg?as=webp&width=800 800w"
+                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+              >
+              <img
+                src="./assets/images/gullfoss.jpg?width=800"
+                srcset="
+                  ./assets/images/gullfoss.jpg?width=360 360w,
+                  ./assets/images/gullfoss.jpg?width=540 540w,
+                  ./assets/images/gullfoss.jpg?width=800 800w"
+                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+                alt="Cascada Gullfoss en Islandia"
+                width="800"
+                height="450"
+                loading="lazy"
+                decoding="async"
+              >
+            </picture>
+
             <h3>Cascada Gullfoss</h3>
             <p>Una de las cascadas más espectaculares del país, situada en el famoso Círculo Dorado.</p>
             <a href="det1.html" class="enlace-detalle">Ver más</a>
           </article>
 
           <article>
-            <img
-              src="./assets/images/aurora.jpg"
-              srcset="
-                ./assets/images/aurora.jpg?width=360 360w,
-                ./assets/images/aurora.jpg?width=540 540w,
-                ./assets/images/aurora.jpg?width=800 800w"
-              sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
-              alt="Aurora boreal iluminando el cielo islandés"
-              loading="lazy"
-            />
+            <picture>
+              <source
+                type="image/avif"
+                srcset="
+                  ./assets/images/aurora.jpg?as=avif&width=360 360w,
+                  ./assets/images/aurora.jpg?as=avif&width=540 540w,
+                  ./assets/images/aurora.jpg?as=avif&width=800 800w"
+                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+              >
+              <source
+                type="image/webp"
+                srcset="
+                  ./assets/images/aurora.jpg?as=webp&width=360 360w,
+                  ./assets/images/aurora.jpg?as=webp&width=540 540w,
+                  ./assets/images/aurora.jpg?as=webp&width=800 800w"
+                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+              >
+              <img
+                src="./assets/images/aurora.jpg?width=800"
+                srcset="
+                  ./assets/images/aurora.jpg?width=360 360w,
+                  ./assets/images/aurora.jpg?width=540 540w,
+                  ./assets/images/aurora.jpg?width=800 800w"
+                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+                alt="Aurora boreal iluminando el cielo islandés"
+                width="800"
+                height="450"
+                loading="lazy"
+                decoding="async"
+              >
+            </picture>
+
             <h3>Auroras boreales</h3>
             <p>Vive una noche inolvidable bajo uno de los espectáculos naturales más impresionantes del mundo.</p>
             <a href="det2.html" class="enlace-detalle">Ver más</a>

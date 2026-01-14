@@ -582,6 +582,7 @@ footer {
 
   a {
     color: $color-secundario;
+    text-decoration: underline;
 
     &:hover {
       text-decoration: underline;
@@ -655,4 +656,46 @@ footer {
 a:focus, button:focus {
   outline: 3px solid $color-boton;
   outline-offset: 4px;
+}
+
+/* Mejora para YouTube */
+.video-container .yt-lite {
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.video-container .yt-lite img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.video-container .yt-play {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 70px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.55);
+  display: grid;
+  place-items: center;
+}
+
+.video-container .yt-play::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 18px solid #fff;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  margin-left: 4px;
 }

@@ -6,7 +6,9 @@
     <meta name="description" content="Descubre las auroras boreales en Islandia: consejos, mejores lugares y experiencias inolvidables bajo el cielo ártico.">
     <title>Auroras Boreales | Islandia en 7 días</title>
     <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+
     <link rel="stylesheet" href="./assets/css/main.scss">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -33,7 +35,40 @@
 
     <main id="contenido-principal" class="detalle">
       <article class="contenido-detalle">
-        <img src="./assets/images/aurora.jpg" alt="Aurora boreal sobre montañas en Islandia" class="destacada">
+        <picture>
+          <source
+            type="image/avif"
+            srcset="
+              ./assets/images/aurora.jpg?as=avif&width=480 480w,
+              ./assets/images/aurora.jpg?as=avif&width=800 800w,
+              ./assets/images/aurora.jpg?as=avif&width=1200 1200w"
+            sizes="(max-width: 600px) 90vw, (max-width: 1000px) 100vw, 800px"
+          >
+          <source
+            type="image/webp"
+            srcset="
+              ./assets/images/aurora.jpg?as=webp&width=480 480w,
+              ./assets/images/aurora.jpg?as=webp&width=800 800w,
+              ./assets/images/aurora.jpg?as=webp&width=1200 1200w"
+            sizes="(max-width: 600px) 90vw, (max-width: 1000px) 100vw, 800px"
+          >
+          <img
+            src="./assets/images/aurora.jpg?width=1200"
+            srcset="
+              ./assets/images/aurora.jpg?width=480 480w,
+              ./assets/images/aurora.jpg?width=800 800w,
+              ./assets/images/aurora.jpg?width=1200 1200w"
+            sizes="(max-width: 600px) 90vw, (max-width: 1000px) 100vw, 800px"
+            alt="Aurora boreal sobre montañas en Islandia"
+            class="destacada"
+            width="1200"
+            height="675"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          >
+        </picture>
+
         <h2>Un espectáculo de luz en el cielo ártico</h2>
         <p>
           Las <strong>auroras boreales</strong> son uno de los fenómenos naturales más impresionantes del planeta.
@@ -41,7 +76,7 @@
         </p>
         <p>
           Este fenómeno ocurre cuando las partículas solares chocan con la atmósfera terrestre,
-          produciendo cortinas de luz que varían del verde al púrpura. 
+          produciendo cortinas de luz que varían del verde al púrpura.
           Se pueden ver desde finales de agosto hasta abril, siendo los meses más recomendables de noviembre a febrero.
         </p>
         <p>
@@ -51,14 +86,131 @@
 
         <h3>Galería de imágenes</h3>
         <div class="galeria">
-          <img src="./assets/images/aurora2.jpg" alt="Aurora boreal reflejada en un lago islandés" data-caption="Aurora boreal sobre el lago Þingvallavatn" onclick="abrirLightbox(this)">
-          <img src="./assets/images/aurora3.jpg" alt="Auroras de tonos verdes sobre un paisaje nevado" data-caption="Auroras de tonos verdes sobre un paisaje nevado" onclick="abrirLightbox(this)">
-          <img src="./assets/images/aurora4.jpg" alt="Cielos púrpuras de una aurora boreal en Islandia" data-caption="Cielos púrpuras de una aurora boreal en Islandia" onclick="abrirLightbox(this)">
+          <picture>
+            <source
+              type="image/avif"
+              srcset="
+                ./assets/images/aurora2.jpg?as=avif&width=360 360w,
+                ./assets/images/aurora2.jpg?as=avif&width=540 540w,
+                ./assets/images/aurora2.jpg?as=avif&width=800 800w"
+              sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+            >
+            <source
+              type="image/webp"
+              srcset="
+                ./assets/images/aurora2.jpg?as=webp&width=360 360w,
+                ./assets/images/aurora2.jpg?as=webp&width=540 540w,
+                ./assets/images/aurora2.jpg?as=webp&width=800 800w"
+              sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+            >
+            <img
+              src="./assets/images/aurora2.jpg?width=800"
+              srcset="
+                ./assets/images/aurora2.jpg?width=360 360w,
+                ./assets/images/aurora2.jpg?width=540 540w,
+                ./assets/images/aurora2.jpg?width=800 800w"
+              sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+              alt="Aurora boreal reflejada en un lago islandés"
+              loading="lazy"
+              decoding="async"
+              width="800"
+              height="450"
+              data-caption="Aurora boreal sobre el lago Þingvallavatn"
+              onclick="abrirLightbox(this)"
+            >
+          </picture>
+
+          <picture>
+            <source
+              type="image/avif"
+              srcset="
+                ./assets/images/aurora3.jpg?as=avif&width=360 360w,
+                ./assets/images/aurora3.jpg?as=avif&width=540 540w,
+                ./assets/images/aurora3.jpg?as=avif&width=800 800w"
+              sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+            >
+            <source
+              type="image/webp"
+              srcset="
+                ./assets/images/aurora3.jpg?as=webp&width=360 360w,
+                ./assets/images/aurora3.jpg?as=webp&width=540 540w,
+                ./assets/images/aurora3.jpg?as=webp&width=800 800w"
+              sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+            >
+            <img
+              src="./assets/images/aurora3.jpg?width=800"
+              srcset="
+                ./assets/images/aurora3.jpg?width=360 360w,
+                ./assets/images/aurora3.jpg?width=540 540w,
+                ./assets/images/aurora3.jpg?width=800 800w"
+              sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+              alt="Auroras de tonos verdes sobre un paisaje nevado"
+              loading="lazy"
+              decoding="async"
+              width="800"
+              height="450"
+              data-caption="Auroras de tonos verdes sobre un paisaje nevado"
+              onclick="abrirLightbox(this)"
+            >
+          </picture>
+
+          <picture>
+            <source
+              type="image/avif"
+              srcset="
+                ./assets/images/aurora4.jpg?as=avif&width=360 360w,
+                ./assets/images/aurora4.jpg?as=avif&width=540 540w,
+                ./assets/images/aurora4.jpg?as=avif&width=800 800w"
+              sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+            >
+            <source
+              type="image/webp"
+              srcset="
+                ./assets/images/aurora4.jpg?as=webp&width=360 360w,
+                ./assets/images/aurora4.jpg?as=webp&width=540 540w,
+                ./assets/images/aurora4.jpg?as=webp&width=800 800w"
+              sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+            >
+            <img
+              src="./assets/images/aurora4.jpg?width=800"
+              srcset="
+                ./assets/images/aurora4.jpg?width=360 360w,
+                ./assets/images/aurora4.jpg?width=540 540w,
+                ./assets/images/aurora4.jpg?width=800 800w"
+              sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+              alt="Cielos púrpuras de una aurora boreal en Islandia"
+              loading="lazy"
+              decoding="async"
+              width="800"
+              height="450"
+              data-caption="Cielos púrpuras de una aurora boreal en Islandia"
+              onclick="abrirLightbox(this)"
+            >
+          </picture>
         </div>
 
         <h3>Vídeo de auroras boreales en Islandia</h3>
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/embed/NeZ0VAz0fyg" title="Auroras boreales en Islandia" allowfullscreen></iframe>
+
+        <div
+          class="video-container"
+          data-youtube-id="NeZ0VAz0fyg"
+          aria-label="Reproductor de vídeo de YouTube: Auroras boreales en Islandia"
+        >
+          <button
+            type="button"
+            class="yt-lite"
+            aria-label="Reproducir vídeo: Auroras boreales en Islandia"
+          >
+            <img
+              src="https://i.ytimg.com/vi/NeZ0VAz0fyg/hqdefault.jpg"
+              alt="Miniatura del vídeo de YouTube"
+              loading="lazy"
+              decoding="async"
+              width="480"
+              height="360"
+            />
+            <span class="yt-play" aria-hidden="true"></span>
+          </button>
         </div>
       </article>
     </main>

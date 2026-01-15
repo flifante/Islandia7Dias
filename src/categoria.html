@@ -9,10 +9,28 @@
     >
     <title>Rutas y lugares | Islandia en 7 días</title>
     <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+
+    <link
+      rel="preload"
+      as="image"
+      href="./assets/images/gullfoss.jpg?as=avif&width=540"
+      imagesrcset="
+        ./assets/images/gullfoss.jpg?as=avif&width=360 360w,
+        ./assets/images/gullfoss.jpg?as=avif&width=540 540w,
+        ./assets/images/gullfoss.jpg?as=avif&width=800 800w"
+      imagesizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+    >
+
     <link rel="stylesheet" href="./assets/css/main.scss">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    >
     <noscript>
       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     </noscript>
@@ -39,7 +57,6 @@
         </p>
 
         <div class="grid-rutas">
-          <!-- 1) Gullfoss (prioritaria en esta página) -->
           <article>
             <picture>
               <source
@@ -81,7 +98,6 @@
             <a href="det1.html" class="enlace-detalle">Ver más</a>
           </article>
 
-          <!-- 2) Aurora (lazy + picture) -->
           <article>
             <picture>
               <source
@@ -90,7 +106,7 @@
                   ./assets/images/aurora.jpg?as=avif&width=360 360w,
                   ./assets/images/aurora.jpg?as=avif&width=540 540w,
                   ./assets/images/aurora.jpg?as=avif&width=800 800w"
-                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+                sizes="(max-width: 600px) 92vw, (max-width: 1000px) 50vw, 440px"
               >
               <source
                 type="image/webp"
@@ -98,7 +114,7 @@
                   ./assets/images/aurora.jpg?as=webp&width=360 360w,
                   ./assets/images/aurora.jpg?as=webp&width=540 540w,
                   ./assets/images/aurora.jpg?as=webp&width=800 800w"
-                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+                sizes="(max-width: 600px) 92vw, (max-width: 1000px) 50vw, 440px"
               >
               <img
                 src="./assets/images/aurora.jpg?width=800"
@@ -106,7 +122,7 @@
                   ./assets/images/aurora.jpg?width=360 360w,
                   ./assets/images/aurora.jpg?width=540 540w,
                   ./assets/images/aurora.jpg?width=800 800w"
-                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+                sizes="(max-width: 600px) 92vw, (max-width: 1000px) 50vw, 440px"
                 alt="Aurora boreal sobre el cielo de Islandia"
                 width="800"
                 height="450"
@@ -122,7 +138,6 @@
             <a href="det2.html" class="enlace-detalle">Ver más</a>
           </article>
 
-          <!-- 3) Jökulsárlón (lazy + picture) -->
           <article>
             <picture>
               <source
@@ -131,7 +146,7 @@
                   ./assets/images/jokulsarlon.jpg?as=avif&width=360 360w,
                   ./assets/images/jokulsarlon.jpg?as=avif&width=540 540w,
                   ./assets/images/jokulsarlon.jpg?as=avif&width=800 800w"
-                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+                sizes="(max-width: 600px) 92vw, (max-width: 1000px) 50vw, 440px"
               >
               <source
                 type="image/webp"
@@ -139,7 +154,7 @@
                   ./assets/images/jokulsarlon.jpg?as=webp&width=360 360w,
                   ./assets/images/jokulsarlon.jpg?as=webp&width=540 540w,
                   ./assets/images/jokulsarlon.jpg?as=webp&width=800 800w"
-                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+                sizes="(max-width: 600px) 92vw, (max-width: 1000px) 50vw, 440px"
               >
               <img
                 src="./assets/images/jokulsarlon.jpg?width=800"
@@ -147,7 +162,7 @@
                   ./assets/images/jokulsarlon.jpg?width=360 360w,
                   ./assets/images/jokulsarlon.jpg?width=540 540w,
                   ./assets/images/jokulsarlon.jpg?width=800 800w"
-                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+                sizes="(max-width: 600px) 92vw, (max-width: 1000px) 50vw, 440px"
                 alt="Laguna glaciar Jökulsárlón, Islandia"
                 width="800"
                 height="450"
@@ -163,7 +178,6 @@
             <a class="enlace-detalle" aria-disabled="true">Próximamente</a>
           </article>
 
-          <!-- 4) Reikiavik (lazy + picture) -->
           <article>
             <picture>
               <source
@@ -171,24 +185,27 @@
                 srcset="
                   ./assets/images/reykjavik.jpg?as=avif&width=360 360w,
                   ./assets/images/reykjavik.jpg?as=avif&width=540 540w,
+                  ./assets/images/reykjavik.jpg?as=avif&width=640 640w,
                   ./assets/images/reykjavik.jpg?as=avif&width=800 800w"
-                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+                sizes="(max-width: 600px) 92vw, (max-width: 1000px) 50vw, 440px"
               >
               <source
                 type="image/webp"
                 srcset="
                   ./assets/images/reykjavik.jpg?as=webp&width=360 360w,
                   ./assets/images/reykjavik.jpg?as=webp&width=540 540w,
+                  ./assets/images/reykjavik.jpg?as=webp&width=640 640w,
                   ./assets/images/reykjavik.jpg?as=webp&width=800 800w"
-                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+                sizes="(max-width: 600px) 92vw, (max-width: 1000px) 50vw, 440px"
               >
               <img
                 src="./assets/images/reykjavik.jpg?width=800"
                 srcset="
                   ./assets/images/reykjavik.jpg?width=360 360w,
                   ./assets/images/reykjavik.jpg?width=540 540w,
+                  ./assets/images/reykjavik.jpg?width=640 640w,
                   ./assets/images/reykjavik.jpg?width=800 800w"
-                sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 450px"
+                sizes="(max-width: 600px) 92vw, (max-width: 1000px) 50vw, 440px"
                 alt="Vista aérea de Reikiavik, capital de Islandia"
                 width="800"
                 height="450"
